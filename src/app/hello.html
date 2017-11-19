@@ -1,4 +1,12 @@
-<h1>{{ $ctrl.hello }}</h1>
+<input type="text" ng-model="$ctrl.age" ng-init="$ctrl.age = 0">
 
-<input type="text" ng-model="$ctrl.name" ng-init="$ctrl.name = ''" placeholder="Put your name here">
-<pre> Salut {{ $ctrl.name }} ! </pre>
+<div ng-if="$ctrl.age === 0">
+  Try to find my age !
+</div>
+<div ng-show="$ctrl.age < 5 && $ctrl.age != 0"> Froid </div>
+<div ng-show="$ctrl.age > 5 && $ctrl.age < 10"> tiède </div>
+<div ng-show="$ctrl.age > 10 && $ctrl.age < 12"> tu brules ! </div>
+<div ng-show="$ctrl.age == 12"> Bravo !!! </div>
+<div ng-show="$ctrl.age > 12 && $ctrl.age < 14"> tu brules ! </div>
+<div ng-show="$ctrl.age > 14 && $ctrl.age < 20"> tièdes ! </div>
+<div ng-show="$ctrl.age > 20"> Froid </div>
