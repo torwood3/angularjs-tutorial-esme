@@ -3,10 +3,8 @@
 
 export const hello = {
   template: require('./hello.html'),
-  controller($log) { // Injection de dépendance
+  controller() {
     const vm = this;
-    vm.handleOnChange = () => {
-      $log.log(vm.name);
-    };
+    vm.myList = [1, 2, 3, 4, 5];
   }
 };
