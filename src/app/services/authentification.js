@@ -9,6 +9,11 @@ export class AuthService {
     this._location = $location;
     this.userList = [];
     this.form = {title: '', callback: () => {}};
+    this.isAuth = false;
+  }
+
+  isAuthenticated() {
+    return this.isAuth;
   }
 
   setFormTitle(title) {
@@ -33,6 +38,7 @@ export class AuthService {
       if (this.userList[user].username === username) {
         if (this.userList[user].password === password) {
           callback(true);
+          this.isAuth = true;
           found = false;
         }
       }

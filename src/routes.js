@@ -5,11 +5,13 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $locationProvider.html5Mode(true).hashPrefix('!');
   $urlRouterProvider.otherwise('/');
 
-  /* Not use
   $stateProvider
-    .state('app', {
+    .state('login', {
       url: '/',
-      component: 'app'
+      component: 'appLogin'
+    })
+    .state('register', {
+      url: '/register',
+      component: 'appRegister'
     });
-  */
 }
