@@ -1,0 +1,17 @@
+<div id="form">
+  <form novalidate role="form" class="form-signin">
+    <h2 class="form-signin-heading">{{$ctrl.submitTitle}}</h2>
+    <input type="text" id="username" class="form-control" ng-model="$ctrl.user.username" placeholder="Username" ng-required autofocus />
+    <br>
+    <input type="password" id="password" class="form-control" ng-model="$ctrl.user.password" placeholder="Password" ng-required>
+    <br>
+    <div ng-if="$ctrl.isRegister">
+      <input type="password" id="confirmPassword" class="form-control" ng-model="$ctrl.user.confirmPassword" placeholder="Password" ng-required>
+      <span ng-show="$ctrl.user.confirmPassword !== $ctrl.user.password"> Error, use the same password</span>
+      <br>
+    </div>
+
+    <input type="button" class="btn btn-danger btn-block" ng-click="$ctrl.reset()" value="Reset" />
+    <input type="button" class="btn btn-primary btn-block" ng-click="$ctrl.submit($ctrl.user)" value="{{$ctrl.submitTitle}}" />
+  </form>
+</div>
