@@ -44,11 +44,11 @@ To see the changes made between any two lessons use the `git diff` command:
 git diff step-?..step-?
 ```
 
-### step-0_X _Back To Basics_
-### step-1_X _Components_
-### step-2_X _Services_
-### step-3_X _Router_
-### step-4_X _Login example_
+- step-0_X _Back To Basics_
+- step-1_X _Components_
+- step-2_X _Services_
+- step-3_X _Router_
+- step-4_X _Login example_
 
 ### Installing Dependencies
 
