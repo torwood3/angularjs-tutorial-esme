@@ -4,13 +4,12 @@
 
 export const Register = {
   template: require('./register.html'),
-  controller() {
-    /*
-     const vm = this;
-     const submitTitle = 'Register';
-     const submit = () => {
-      // submit login form
-     };
-     */
+  controller($log, AuthService) {
+    AuthService.setFormTitle('Register');
+    AuthService.setSubmitCallback(user => {
+      AuthService.register(user.username, user.password, user.confirmPassword, isLogged => {
+        $log.log(isLogged);
+      });
+    });
   }
 };

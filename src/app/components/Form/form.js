@@ -2,13 +2,11 @@ import angular from 'angular';
 
 export const Form = {
   template: require('./form.html'),
-  controller() {
+  controller(AuthService) {
     const vm = this;
-    vm.isRegister = false;
-    vm.submitTitle = 'Login';
-    vm.submit = () => {
-
-    };
+    vm.isRegister = (AuthService.getFormTitle() === 'Register');
+    vm.submitTitle = AuthService.getFormTitle();
+    vm.submit = AuthService.getSubmitCallback();
 
     vm.reset = () => {
       vm.user = angular.copy({

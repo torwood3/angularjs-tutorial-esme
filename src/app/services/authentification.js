@@ -8,6 +8,23 @@ export class AuthService {
     this._log = $log;
     this._location = $location;
     this.userList = [];
+    this.form = {title: '', callback: () => {}};
+  }
+
+  setFormTitle(title) {
+    this.form.title = title;
+  }
+
+  getFormTitle() {
+    return this.form.title;
+  }
+
+  setSubmitCallback(callback) {
+    this.form.callback = callback;
+  }
+
+  getSubmitCallback() {
+    return this.form.callback;
   }
 
   login(username, password, callback) {

@@ -5,15 +5,11 @@
 export const Login = {
   template: require('./login.html'),
   controller($log, AuthService) {
-    /*
-     const vm = this;
-     const submitTitle = 'Login';
-     const submit = () => {
-      // submit login form
-     };
-     */
-    AuthService.login('', '', res => {
-      $log.log(res);
+    AuthService.setFormTitle('Login');
+    AuthService.setSubmitCallback(user => {
+      AuthService.login(user.username, user.password, isLogged => {
+        $log.log(isLogged);
+      });
     });
   }
 };
