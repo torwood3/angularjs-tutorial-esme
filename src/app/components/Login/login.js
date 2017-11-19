@@ -4,7 +4,7 @@
 
 export const Login = {
   template: require('./login.html'),
-  controller() {
+  controller($log, AuthService) {
     /*
      const vm = this;
      const submitTitle = 'Login';
@@ -12,5 +12,8 @@ export const Login = {
       // submit login form
      };
      */
+    AuthService.login('', '', res => {
+      $log.log(res);
+    });
   }
 };
