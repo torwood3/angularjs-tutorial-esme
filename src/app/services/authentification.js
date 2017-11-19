@@ -10,6 +10,7 @@ export class AuthService {
     this.userList = [];
     this.form = {title: '', callback: () => {}};
     this.isAuth = false;
+    this.currentUser = {};
   }
 
   isAuthenticated() {
@@ -37,8 +38,9 @@ export class AuthService {
     for (const user in this.userList) {
       if (this.userList[user].username === username) {
         if (this.userList[user].password === password) {
-          callback(true);
           this.isAuth = true;
+          this.currentUser = this.userList[user];
+          callback(true);
           found = false;
         }
       }

@@ -4,11 +4,15 @@
 
 export const Login = {
   template: require('./login.html'),
-  controller($log, AuthService) {
+  controller($log, AuthService, $state) {
     AuthService.setFormTitle('Login');
     AuthService.setSubmitCallback(user => {
       AuthService.login(user.username, user.password, isLogged => {
-        $log.log(isLogged);
+        if (isLogged) {
+          $state.go('private');
+        } else {
+          $log.log('Error');
+        }
       });
     });
   }
