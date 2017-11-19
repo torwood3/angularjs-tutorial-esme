@@ -2,6 +2,6 @@
 <button ng-click="$ctrl.myList.push($ctrl.element)">Add</button>
 
 <!-- ERROR if you put twice the same number, try :) -->
-<ul ng-repeat="el in $ctrl.myList">
+<ul ng-repeat="el in $ctrl.myList track by $index">
   <li>{{$index}} - {{el}}</li>
 </ul>
