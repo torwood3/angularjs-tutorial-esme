@@ -1,7 +1,10 @@
 <input type="text" ng-model="$ctrl.element">
-<button ng-click="$ctrl.myList.push($ctrl.element)">Add</button>
+<button ng-click="$ctrl.myList.push({name: $ctrl.element})">Add</button>
+
+
+<input type="text" ng-model="$ctrl.search" placeholder="Search">
 
 <!-- ERROR if you put twice the same number, try :) -->
-<ul ng-repeat="el in $ctrl.myList track by $index">
-  <li>{{$index}} - {{el}}</li>
+<ul ng-repeat="el in $ctrl.myList | filter:$ctrl.search  track by $index ">
+  <li>{{$index}} - {{el.name}}</li>
 </ul>

@@ -5,6 +5,6 @@ export const hello = {
   template: require('./hello.html'),
   controller() {
     const vm = this;
-    vm.myList = [1, 2, 3, 4, 5];
+    vm.myList = [{name: 'Saab'}, {name: 'Volvo'}, {name: 'BMW'}];
   }
 };
